@@ -33,11 +33,13 @@ body {
   margin: -1px;
 }
 
-main {
-  margin-top: 220px;
+.main {
+  &.mt {
+    margin-top: 210px;
 
-  @include breakpointsMaxW($bp-991) {
-    margin-top: 80px;
+    @include breakpointsMaxW($bp-991) {
+      margin-top: 80px;
+    }
   }
 }
 
@@ -481,7 +483,7 @@ input[type='file'] {
     display: flex;
     align-items: center;
 
-    @include breakpointsMaxW($bp-768){
+    @include breakpointsMaxW($bp-768) {
       justify-content: center;
     }
   }

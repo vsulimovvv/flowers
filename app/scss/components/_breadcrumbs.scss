@@ -1,7 +1,19 @@
 .breadcrumbs {
   @include adaptive-value('padding-top', 24, 15, 1);
+  margin-top: 220px;
 
-  display: flex;
+  &--absolute {
+    position: absolute;
+    left: max(15px, calc((100% - 1240px) / 2));
+
+    .container {
+      padding: 0;
+    }
+  }
+
+  @include breakpointsMaxW($bp-991) {
+    margin-top: 100px;
+  }
 
   &__list {
     display: flex;
@@ -12,32 +24,32 @@
     position: relative;
 
     &:not(:last-child) {
-      margin-right: 7px;
-      padding-right: 14px;
+      padding-right: 10px;
+      margin-right: 10px;
       transition: 150ms;
 
       &::after {
-        @include elDef();
-        width: 8px;
-        height: 7px;
+        position: absolute;
+        content: '/';
+        font-size: 14px;
         top: 50%;
-        transform: translateY(-50%) rotate(-90deg);
+        transform: translateY(-50%);
         right: 0;
-        @include maskImage(url('../images/icons/chevron-down.svg'), contain);
-        background-color: #c2c2c2;
+        color: #63626c;
       }
     }
   }
 
   &__link {
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     position: relative;
     transition: 150ms;
-    color: #c2c2c2;
+    color: #63626c;
 
+    &--active,
     &:hover {
-      color: var(--color-text);
+      color: #9996a6;
     }
   }
 }

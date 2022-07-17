@@ -120,6 +120,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+
+    @include breakpointsMaxW($bp-768){
+      grid-template-columns:1fr;
+    }
   }
 
   &__text {
@@ -131,6 +135,11 @@
     border: 1px solid #eaeaea;
     border-radius: 10px;
     padding: 20px;
+
+    @include breakpointsMaxW($bp-991){
+      padding-left: 10px;
+      padding-right: 10px;
+    }
 
     &__name {
       margin-bottom: 15px;

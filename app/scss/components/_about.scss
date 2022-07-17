@@ -1,5 +1,5 @@
 .about {
-  @include adaptive-value('padding-top', 140, 70, 1);
+  @include adaptive-value('padding-top', 140, 100, 1);
   @include adaptive-value('padding-bottom', 140, 70, 1);
   @include background(cover);
 

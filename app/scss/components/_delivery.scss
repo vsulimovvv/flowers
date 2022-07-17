@@ -1,5 +1,5 @@
 .delivery {
-  padding-top: 30px;
+  padding-top: 90px;
   @include background(cover);
   @include adaptive-value('padding-bottom', 90, 50, 1);
   min-height: 1300px;
