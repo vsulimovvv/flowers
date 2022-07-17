@@ -282,6 +282,67 @@
       gap: 30px;
     }
 
+    &__item {
+      position: relative;
+
+      .count {
+        position: absolute;
+        display: block;
+        width: 16px;
+        height: 16px;
+        line-height: 1;
+        border-radius: 50%;
+        background-color: #f1df1a;
+        font-size: 13px;
+        font-weight: 400;
+        color: #272727;
+        padding:  3px;
+        right: 0px;
+        top: 0px;
+      }
+
+      &--price-count {
+        width: 55px;
+        height: 55px;
+        background-color: var(--color-white);
+        border: 2px solid var(--color-accent);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+        font-weight: 300;
+        color: #232323;
+        position: relative;
+        padding: 10px 5px 15px;
+        gap: 6px;
+
+        &::after {
+          @include elDef();
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 5px;
+          @include backgroundImage(
+            url('../images/content/arrow-long.png'),
+            contain
+          );
+          width: 30px;
+          height: 10px;
+        }
+
+        .number {
+          font-family: 'Oswald';
+          font-size: 28px;
+          line-height: 1;
+          color: var(--color-accent);
+        }
+
+        small {
+          margin-top: 10px;
+        }
+      }
+    }
+
     &__btn {
       display: flex;
       flex-direction: column;
@@ -298,6 +359,7 @@
         .header-tools__icon {
           background-color: var(--color-accent);
           fill: var(--color-white);
+          border-color: var(--color-accent);
         }
       }
     }
