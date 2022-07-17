@@ -1,0 +1,99 @@
+.about-adv {
+  @include adaptive-value('padding-top', 60, 40, 1);
+  @include adaptive-value('padding-bottom', 80, 50, 1);
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 20px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    @include adaptive-value('font-size', 20, 14, 1);
+    font-weight: 300;
+    color: #404040;
+    position: relative;
+    border: 3px solid #ecfaed;
+    border-radius: 10px;
+    padding: 35px 15px;
+    padding-top: 100px;
+    text-align: center;
+
+    span {
+      display: block;
+
+      @include breakpointsMaxW($bp-576) {
+        display: inline;
+      }
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      border: 2px solid #ecfaed;
+      gap: 20px 5px;
+      padding-top: 80px;
+    }
+
+    &::after {
+      @include elDef();
+      width: 45px;
+      height: 45px;
+      top: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include breakpointsMaxW($bp-768) {
+        width: 35px;
+        height: 35px;
+        top: 25px;
+      }
+    }
+
+    &--delivery {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/about-adv/1.png'),
+          contain
+        );
+      }
+    }
+
+    &--free {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/about-adv/2.png'),
+          contain
+        );
+      }
+    }
+
+    &--bonus {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/about-adv/3.png'),
+          contain
+        );
+      }
+    }
+
+    &--photo {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/about-adv/4.png'),
+          contain
+        );
+      }
+    }
+  }
+}

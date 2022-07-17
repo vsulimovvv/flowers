@@ -1,0 +1,104 @@
+.advantages {
+  padding-bottom: 35px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    padding: 25px 15px;
+    padding-left: 90px;
+    color: #404040;
+    border: 3px solid #fff3e0;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    min-height: 85px;
+
+    @include breakpointsMaxW($bp-768) {
+      padding: 15px;
+      padding-top: 70px;
+      text-align: center;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      padding: 15px 10px;
+      padding-top: 70px;
+      font-size: 14px;
+    }
+
+    &::after {
+      @include elDef();
+      width: 60px;
+      height: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 13px;
+
+      @include breakpointsMaxW($bp-container) {
+        top: 25px;
+        transform: translateY(0);
+      }
+
+      @include breakpointsMaxW($bp-991) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      @include breakpointsMaxW($bp-768) {
+        top: 15px;
+        transform: translateY(0);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &--delivery {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/advantages/1.png'),
+          contain
+        );
+      }
+    }
+
+    &--free {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/advantages/2.png'),
+          contain
+        );
+      }
+    }
+
+    &--bonus {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/advantages/3.png'),
+          contain
+        );
+      }
+    }
+
+    &--photo {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/advantages/4.png'),
+          contain
+        );
+      }
+    }
+  }
+}

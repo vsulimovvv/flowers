@@ -1,0 +1,272 @@
+.product-card {
+  max-width: 295px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__top {
+    overflow: hidden;
+    @include adaptive-value('height', 350, 200, 1);
+    position: relative;
+
+    img {
+      @include img(cover);
+    }
+
+    &:hover {
+      .card-view {
+        opacity: 1;
+        visibility: visible;
+
+        &__btn {
+          transform: scaleX(1);
+
+          &::before {
+            transform: translateX(0) translateY(-50%) rotate(180deg);
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    @include breakpointsMaxW($bp-360) {
+      top: 10px;
+      left: 10px;
+    }
+  }
+
+  .card-view {
+    position: absolute;
+    background-color: rgba(54, 52, 65, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease;
+
+    &__btn {
+      position: absolute;
+      width: calc(100% - 100px);
+      font-size: 18px;
+      @include adaptive-value('font-size', 18, 11, 1);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: 200ms ease;
+      transition-delay: 200ms;
+
+      &::after {
+        display: none;
+      }
+
+      @include breakpointsMaxW($bp-768) {
+        padding: 10px;
+        width: calc(100% - 80px);
+      }
+
+      @include breakpointsMaxW($bp-360) {
+        width: calc(100% - 60px);
+      }
+
+      &::before {
+        @include elDef();
+        width: 30px;
+        height: 30px;
+        left: -40px;
+        top: 50%;
+        transform: translateX(50px) translateY(-50%) rotate(180deg);
+        @include maskImage(url('../images/icons/arrow-long.svg'), contain);
+        background-color: var(--color-white);
+
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1;
+
+        // transition-delay: 300ms;
+        transition: 200ms ease;
+
+        @include breakpointsMaxW($bp-768) {
+          width: 20px;
+          height: 20px;
+          left: -30px;
+        }
+
+        @include breakpointsMaxW($bp-360) {
+          width: 15px;
+          height: 15px;
+          left: -25px;
+        }
+      }
+    }
+  }
+
+  &__body {
+    padding: 12px 20px 20px 20px;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #e9e9e9;
+    border-top: none;
+
+    @include breakpointsMaxW($bp-container) {
+      padding: 10px;
+    }
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+
+    @include breakpointsMaxW($bp-768) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #282828;
+
+    a {
+      transition: 200ms ease;
+    }
+
+    &:hover {
+      a {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  &__prices {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__price {
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 600;
+    color: #282828;
+
+    &--old {
+      font-size: 13px;
+      color: #b7b6b9;
+      text-decoration: line-through;
+    }
+  }
+
+  &__btns {
+    display: grid;
+    grid-template-columns: minmax(auto, 150px) auto auto;
+    gap: 8px;
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__cart {
+    padding: 12px 25px 12px 50px;
+    position: relative;
+    height: 43px;
+    @include adaptive-value('font-size', 18, 14, 1);
+
+    @include breakpointsMaxW($bp-container) {
+      padding-left: 30px;
+      padding-right: 15px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      grid-column: span 2;
+    }
+
+    &::before {
+      @include elDef();
+      width: 15px;
+      height: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 25px;
+      @include maskImage(url('../images/content/shopping-bag.png'), contain);
+      background-color: var(--color-white);
+
+      @include breakpointsMaxW($bp-container) {
+        left: 10px;
+      }
+
+      @include breakpointsMaxW($bp-768) {
+        left: 15px;
+      }
+
+      @include breakpointsMaxW($bp-360) {
+        top: 45%;
+      }
+    }
+  }
+
+  &__btn {
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+    position: relative;
+    transition: 200ms ease;
+    width: 43px;
+    height: 43px;
+
+    @include breakpointsMaxW($bp-container) {
+      width: 35px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+
+      &::after {
+        background-color: var(--color-white);
+      }
+    }
+
+    &::after {
+      @include elDef();
+      width: 19px;
+      height: 19px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #b4b1c1;
+      transition: 200ms ease;
+    }
+
+    &--favorites {
+      &::after {
+        @include maskImage(url('../images/content/heart.png'), contain);
+      }
+    }
+
+    &--click {
+      &::after {
+        @include maskImage(url('../images/content/click.png'), contain);
+      }
+    }
+  }
+}

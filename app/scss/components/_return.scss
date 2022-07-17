@@ -1,0 +1,49 @@
+.return {
+  padding-top: 30px;
+  @include adaptive-value('padding-bottom', 80, 50, 1);
+  background-color: var(--color-bg-gray);
+  color: #414141;
+  @include adaptive-value('font-size', 17, 15, 1);
+
+  &__title {
+    @include fz30();
+    @include adaptive-value('margin-bottom', 35, 25, 1);
+  }
+
+  &__inner {
+    padding: 40px 30px 60px;
+    background-color: var(--color-white);
+    @include adaptive-value('padding-top', 40, 20, 1);
+    @include adaptive-value('padding-left', 30, 15, 1);
+    @include adaptive-value('padding-right', 30, 15, 1);
+    @include adaptive-value('padding-bottom', 60, 40, 1);
+  }
+
+  &__list {
+    display: grid;
+    @include adaptive-value('gap', 30, 20, 1);
+    @include adaptive-value('margin-bottom', 30, 20, 1);
+  }
+
+  &__item {
+    padding-left: 13px;
+    position: relative;
+
+    &::after {
+      @include elDef();
+      width: 4px;
+      height: 4px;
+      background-color: #414141;
+      top: 8px;
+      left: 0;
+    }
+  }
+
+  &__text {
+    p {
+      &:not(:last-child) {
+        @include adaptive-value('margin-bottom', 30, 20, 1);
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  transition: 350ms ease;
+
+  &__container {
+    width: calc(100% - 40px);
+    max-width: 480px;
+    background-color: #fafafa;
+    transition: 250ms ease-in;
+    position: relative;
+    overflow-y: auto;
+    max-height: calc(100% - 40px);
+    transition: 750ms ease;
+    padding: 40px;
+    @include adaptive-value('padding-left', 40, 15, 1);
+    @include adaptive-value('padding-right', 40, 15, 1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    animation: opacity-visibility 500ms ease forwards;
+  }
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 25px;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+    @include adaptive-value('margin-bottom', 25, 15, 1);
+    color: var(--color-dark);
+  }
+
+  &__text {
+    color: #8c8b93;
+    text-align: center;
+    @include adaptive-value('margin-bottom', 30, 20, 1);
+    @include adaptive-value('font-size', 15, 13, 1);
+  }
+
+  &__close {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 16px;
+    top: 16px;
+    fill: #bcc4cf;
+    transition: 150ms ease;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      fill: var(--color-dark);
+    }
+  }
+
+  .form-submit {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+
+    &__group {
+      &--textarea {
+        height: 100px;
+
+        .form-submit__input {
+          height: 100%;
+        }
+      }
+    }
+
+    &__bottom {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,230 @@
+.footer {
+  padding-top: 50px;
+  border-top: 1px solid #f5f5f5;
+
+  @include breakpointsMaxW($bp-576) {
+    padding-top: 30px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 40px;
+    padding-bottom: 50px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 30px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__left {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 40px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 30px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: auto;
+      justify-content: flex-start;
+    }
+  }
+
+  &__right {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 40px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 30px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 16px;
+    line-height: 1;
+    padding: 8px 0;
+    color: #777582;
+    transition: 200ms ease;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 600;
+    color: #363441;
+    margin-bottom: 20px;
+  }
+
+  &__lists {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 40px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 20px;
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid #f5f5f5;
+    padding: 20px 0;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 400;
+    color: #95959a;
+
+    &-left {
+      display: flex;
+      align-items: center;
+
+      @include breakpointsMaxW($bp-container) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+
+    &-links {
+      @include breakpointsMaxW($bp-576) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+      color: #474747;
+    }
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      @include breakpointsMaxW($bp-991) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+    }
+  }
+
+  &__socials {
+    margin-bottom: 30px;
+  }
+
+  &__col {
+    &--last {
+      align-self: center;
+    }
+  }
+
+  .footer-payment {
+    &__name {
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 400;
+      color: #363441;
+      margin-bottom: 20px;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    &__item {
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
+  .footer-contacts {
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 30px;
+      position: relative;
+      line-height: 1;
+      gap: 8px;
+
+      a {
+        transition: 200ms ease;
+
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+
+      &::after {
+        @include elDef();
+        width: 15px;
+        height: 15px;
+        top: 0;
+        left: 0;
+        background-color: #d1cede;
+      }
+
+      &--phone {
+        &::after {
+          @include maskImage(url('../images/icons/phone-call-2.svg'), contain);
+        }
+      }
+
+      &--location {
+        &::after {
+          @include maskImage(url('../images/icons/location.svg'), contain);
+        }
+      }
+
+      &--schedule {
+        &::after {
+          @include maskImage(url('../images/icons/clock-2.svg'), contain);
+        }
+      }
+
+      &--email {
+        &::after {
+          @include maskImage(url('../images/icons/mail.svg'), contain);
+        }
+      }
+    }
+  }
+
+  .company {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+}

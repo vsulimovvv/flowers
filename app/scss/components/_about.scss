@@ -1,0 +1,41 @@
+.about {
+  @include adaptive-value('padding-top', 140, 70, 1);
+  @include adaptive-value('padding-bottom', 140, 70, 1);
+  @include background(cover);
+
+  @include breakpointsMaxW($bp-576) {
+    background-position: left center;
+  }
+
+  &__wrapper {
+    width: 41%;
+
+    @include breakpointsMaxW($bp-991) {
+      width: 45%;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      width: 55%;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @include fz30();
+    @include adaptive-value('margin-bottom', 30, 20, 1);
+  }
+
+  &__text {
+    color: #6c6c6f;
+    @include adaptive-value('font-size', 17, 15, 1);
+
+    p {
+      &:not(:last-child) {
+        @include adaptive-value('margin-bottom', 30, 20, 1);
+      }
+    }
+  }
+}

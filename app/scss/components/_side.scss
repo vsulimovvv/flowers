@@ -1,0 +1,158 @@
+.side {
+  width: 100%;
+
+  &__box {
+    padding: 10px 20px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #ebebeb;
+    }
+  }
+
+  &__top {
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+  }
+
+  &__news {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-white);
+  }
+
+  &__control {
+    display: block;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px 0;
+    text-align-last: left;
+    font-size: 16px;
+    font-weight: 600;
+    color: #53595c;
+
+    &.accordion__control {
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
+  &__list {
+    max-height: 250px;
+    overflow-y: auto;
+
+    .simplebar-scrollbar::before {
+      background-color: #bababa;
+      width: 4px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 10px 0;
+
+    .checkbox {
+      align-items: center;
+    }
+  }
+
+  &__color {
+    padding-left: 30px;
+    position: relative;
+
+    &::after {
+      @include elDef();
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+
+    &--white {
+      &::after {
+        border: 1px solid #dedede;
+        background-color: var(--color-white);
+      }
+    }
+
+    &--beige {
+      &::after {
+        background-color: #ffe6b3;
+      }
+    }
+
+    &--black {
+      &::after {
+        background-color: #373737;
+      }
+    }
+
+    &--green {
+      &::after {
+        background-color: #85b975;
+      }
+    }
+
+    &--blue {
+      &::after {
+        background-color: #95afda;
+      }
+    }
+
+    &--red {
+      &::after {
+        background-color: #c75959;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 16px;
+    color: #80898d;
+    position: relative;
+    padding-right: 20px;
+    transition: 150ms ease;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+
+    &--dropdown {
+      padding-right: 15px;
+      position: relative;
+      border-radius: 5px;
+
+      &::after {
+        @include elDef();
+        width: 6px;
+        height: 6px;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include maskImage(url('../images/icons/triangle.svg'), 100%);
+        background-color: #e4e4e4;
+      }
+
+      &:hover {
+        &::after {
+          background-color: var(--color-accent);
+        }
+
+        & + .dropmenu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}

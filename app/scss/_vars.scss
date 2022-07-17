@@ -1,0 +1,24 @@
+// Color
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-dark: #363441; // rgba(54, 52, 65, 1)
+  --color-text: #282828;
+  --color-gray: #777582;
+  --color-bg: #fffbf6;
+  --color-bg-gray: #eeeeee;
+  --color-accent: #4abb51;
+  --gradient-accent: linear-gradient(90deg, #4abb51 0%, #9dc25c 100%);
+  --color-accent-light: #ebf7ec;
+}
+
+// * breakpointsMaxW
+$bp-container: 1270px;
+$bp-991: 991.98px;
+$bp-768: 767.98px;
+$bp-576: 576px;
+$bp-360: 359.98px;
+
+// *=== Fonts
+$TTCommons: 'TT Commons';

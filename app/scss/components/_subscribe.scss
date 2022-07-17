@@ -1,0 +1,107 @@
+.subscribe {
+  @include adaptive-value('padding-top', 90, 50, 1);
+  color: var(--color-white);
+
+  @include breakpointsMaxW($bp-576) {
+    padding-top: 180px;
+  }
+
+  &__wrapper {
+    padding-left: 400px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: var(--gradient-accent);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    position: relative;
+    gap: 30px;
+
+    @include adaptive-value('padding-right', 70, 20, 1);
+    @include adaptive-value('padding-left', 400, 200, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      flex-direction: column;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      align-items: flex-start;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      padding-left: 30px;
+      padding-top: 100px;
+    }
+
+    &::after {
+      @include elDef();
+      @include adaptive-value('width', 350, 170, 1);
+      @include adaptive-value('height', 265, 130, 1);
+      left: 20px;
+      bottom: 0;
+      @include backgroundImage(url('../images/content/flower.png'), contain);
+
+      @include breakpointsMaxW($bp-576) {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: initial;
+        top: -50%;
+        width: 250px;
+        height: 200px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 17px;
+    @include fz30();
+  }
+
+  &__text {
+    line-height: 1.3;
+    @include adaptive-value('font-size', 17, 15, 1);
+  }
+}
+
+.subscibe-form {
+  max-width: 300px;
+  width: 100%;
+
+  @include breakpointsMaxW($bp-container) {
+    max-width: 250px;
+  }
+
+  &__group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+  }
+
+  &__input {
+    outline: transparent;
+    color: var(--color-white);
+    font-size: 17px;
+    line-height: 1;
+    width: 100%;
+    @include adaptive-value('padding-bottom', 22, 15, 1);
+    border-bottom: 1px solid var(--color-white);
+
+    &::placeholder {
+      color: var(--color-white);
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: 0;
+    transform: translateY(-35%);
+    @include maskImage(url('../images/icons/arrow-long.svg'), contain);
+    background-color: var(--color-white);
+  }
+}

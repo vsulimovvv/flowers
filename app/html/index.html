@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    @include('./components/base/_meta.html')
+    @include('./components/base/_links.html')
+
+    <title>Title</title>
+  </head>
+
+  <body>
+    @include('./components/popups/_popups.html')
+
+    <h1 class="visually-hidden">Главная</h1>
+
+    <div class="site-wrapper">
+      @include('./components/_header.html')
+
+      <main class="main">
+        @include('./components/_promo.html')
+        @include('./components/_advantages.html')
+        @include('./components/_categories.html')
+        @include('./components/_new-products.html')
+        @include('./components/_bestsellers.html')
+        @include('./components/_order.html')
+        @include('./components/_banner.html')
+        @include('./components/_about-section.html')
+        @include('./components/_subscribe.html')
+        @include('./components/_reviews.html')
+        @include('./components/_today-bought.html')
+        @include('./components/_faqs.html')
+      </main>
+      @include('./components/_footer.html')
+    </div>
+
+    @include('./components/base/_scripts.html')
+  </body>
+</html>
+

@@ -1,0 +1,848 @@
+<section class="catalog">
+  <div class="container">
+    <div class="catalog__top">
+      <h2 class="catalog__title">Букеты роз в Москве</h2>
+
+      <div class="catalog__sort catalog-sort">
+        <div class="catalog-sort__inner">
+          <span class="catalog-sort__name">Сортировать:</span>
+          <ul class="catalog-sort__list">
+            <li class="catalog-sort__item">
+              <button
+                class="catalog-sort__btn catalog-sort__btn--active"
+                type="button"
+              >
+                по новизне
+              </button>
+            </li>
+            <li class="catalog-sort__item">
+              <button class="catalog-sort__btn" type="button">
+                цена по возрастанию
+              </button>
+            </li>
+            <li class="catalog-sort__item">
+              <button class="catalog-sort__btn" type="button">
+                цена по убыванию
+              </button>
+            </li>
+            <li class="catalog-sort__item">
+              <button class="catalog-sort__btn" type="button">
+                товары со скидкой
+              </button>
+            </li>
+          </ul>
+
+          <select class="select">
+            <option value="1">по новизне</option>
+            <option value="2">цена по возрастанию</option>
+            <option value="3">цена по убыванию</option>
+            <option value="4">товары со скидкой</option>
+          </select>
+
+          <button
+            class="catalog__filter"
+            type="button"
+            aria-label="Фильтры"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="catalog__wrapper">
+      <div class="catalog__side side">
+        <div class="side__top">
+          <div class="side__box accordion">
+            <button class="side__control accordion__control">Цена</button>
+            <div class="side__content accordion__content">
+              <div class="range-slider">
+                <div class="range-slider__range" id="slider-handles"></div>
+                <div class="range-slider__values">
+                  <span class="range-slider__min">руб</span>
+                  <span>-</span>
+                  <span class="range-slider__max"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="side__box accordion">
+            <button class="side__control accordion__control">
+              <span>Выбор букета</span>
+            </button>
+            <div class="side__content accordion__content">
+              <ul class="side__list " data-simplebar>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">В форме сердца</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Кустовые розы</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Радужные розы</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Синие розы</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Пионовые розы</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Кустовые розы</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="side__box accordion">
+            <button class="side__control accordion__control">Цвет</button>
+            <div class="side__content accordion__content">
+              <ul class="side__list" data-simplebar>
+                <li class="side__item">
+                  <button class="side__color side__color--white" type="button">
+                    Белый
+                  </button>
+                </li>
+                <li class="side__item">
+                  <button class="side__color side__color--beige" type="button">
+                    Бежевый
+                  </button>
+                </li>
+                <li class="side__item">
+                  <button class="side__color side__color--black" type="button">
+                    Черный
+                  </button>
+                </li>
+                <li class="side__item">
+                  <button class="side__color side__color--green" type="button">
+                    Зеленый
+                  </button>
+                </li>
+                <li class="side__item">
+                  <button class="side__color side__color--blue" type="button">
+                    Голубой
+                  </button>
+                </li>
+                <li class="side__item">
+                  <button class="side__color side__color--red" type="button">
+                    Красный
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="side__box accordion">
+            <button class="side__control accordion__control">Повод</button>
+            <div class="side__content accordion__content">
+              <ul class="side__list" data-simplebar>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">День рождения</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" checked />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Комплимент</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Букет девушке</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Мужской букет</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Юбилей</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="side__box accordion">
+            <button class="side__control accordion__control">Размер</button>
+            <div class="side__content accordion__content">
+              <ul class="side__list" data-simplebar>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Маленький</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" checked />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Средний</span>
+                  </label>
+                </li>
+                <li class="side__item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" />
+                    <span class="checkbox__box checkbox__box--green"></span>
+                    <span class="checkbox__text">Большой</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalog__right">
+        <ul class="catalog__list">
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="catalog__item">
+            <article class="product-card">
+              <div class="product-card__top">
+                <img src="images/content/products/1.jpg" alt="Букет" />
+
+                <div class="product-card__view card-view">
+                  <button
+                    class="card-view__btn btn btn--transparent"
+                    type="button"
+                  >
+                    Быстрый просмотр
+                  </button>
+                </div>
+              </div>
+              <div class="product-card__body">
+                <div class="product-card__details">
+                  <h3 class="product-card__title">
+                    <a href="#">Букет из разновцветных гладиолусов</a>
+                  </h3>
+
+                  <div class="product-card__prices">
+                    <p class="product-card__price product-card__price--old">
+                      6 500 ₽
+                    </p>
+                    <p class="product-card__price product-card__price--new">
+                      5 250 ₽
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-card__btns">
+                  <button class="product-card__cart btn" type="button">
+                    В корзину
+                  </button>
+                  <button
+                    class="product-card__btn product-card__btn--favorites"
+                    type="button"
+                    aria-label="Добавить в избранное"
+                  ></button>
+                  <button
+                    class="product-card__btn product-card__btn--click"
+                    type="button"
+                    aria-label="Купить в один клик"
+                  ></button>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <div class="catalog__bottom">
+          <div class="categories__pagination pagination">
+            <ul class="pagination__list">
+              <li class="pagination__item">
+                <a class="pagination__link pagination__link--active" href="#"
+                  >1</a
+                >
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">2</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">3</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">4</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">5</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link pagination__link--dots">...</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link pagination__link--further" href="#">
+                  346
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <button class="catalog__more btn btn--transparent" type="button">Показать еще</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

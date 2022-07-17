@@ -1,0 +1,110 @@
+.guarantees {
+  padding-top: 35px;
+  @include adaptive-value('padding-bottom', 80, 50, 1);
+
+  &__title {
+    @include fz30();
+    @include adaptive-value('margin-bottom', 40, 30, 1);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+
+    @include breakpointsMaxW($bp-container) {
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      gap: 30px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 600px;
+    @include adaptive-value('height', 395, 200, 1);
+    object-fit: cover;
+
+    @include breakpointsMaxW($bp-991) {
+      margin: 0 auto;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 135px);
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+
+    @include breakpointsMaxW($bp-991) {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 135px;
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include adaptive-value('gap', 50, 30, 1);
+    @include adaptive-value('font-size', 17, 15, 1);
+  }
+
+  .guarantees-item {
+    position: relative;
+    padding-top: 65px;
+    text-align: center;
+    font-weight: 600;
+    color: #252525;
+
+    &::after {
+      @include elDef();
+      width: 51px;
+      height: 51px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--quality {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/guarantees/flower-bouquet.png'),
+          contain
+        );
+      }
+    }
+
+    &--delivery {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/guarantees/shipped.png'),
+          contain
+        );
+      }
+    }
+
+    &--return {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/guarantees/money.png'),
+          contain
+        );
+      }
+    }
+  }
+}

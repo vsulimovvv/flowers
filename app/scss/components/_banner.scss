@@ -1,0 +1,57 @@
+.banner {
+  @include adaptive-value('padding-bottom', 80, 50, 1);
+
+  &__title {
+    @include fz35();
+    @include adaptive-value('margin-bottom', 30, 20, 1);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: minmax(auto, 930px) minmax(auto, 295px);
+    gap: 20px;
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__preview {
+    @include background(cover);
+    border-radius: 10px;
+    @include adaptive-value('padding', 50, 30, 1);
+
+    @include breakpointsMaxW($bp-576) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 5px;
+    width: 160px;
+  }
+
+  &__right {
+    @include breakpointsMaxW($bp-768) {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: block;
+    background-color: var(--color-white);
+    color: #6e6d78;
+    padding: 10px 15px;
+    transition: 200ms ease;
+    border-radius: 5px;
+    line-height: 1;
+
+    &:hover {
+      background-color: var(--color-accent);
+      color: var(--color-white);
+    }
+  }
+}

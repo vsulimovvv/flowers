@@ -1,0 +1,54 @@
+@import 'libs';
+@import 'reset';
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
+@import 'global';
+
+@import './animations';
+
+// * ===== Other components
+@import './components/breadcrumbs';
+@import './components/swiper-options';
+@import './components/custom-checkbox';
+@import './components/custom-select';
+@import './components/popups';
+@import './components/menu';
+@import './components/menu-top';
+@import './components/menu-mobile';
+@import './components/accordion';
+@import './components/side';
+
+// * ===== Card Components
+@import './components/card-product';
+
+// * ===== Section Components
+@import './components/footer';
+@import './components/header';
+@import './components/promo';
+@import './components/contacts';
+@import './components/categories';
+@import './components/order';
+@import './components/about-section';
+@import './components/subscribe';
+@import './components/bestsellers';
+@import './components/new-products';
+@import './components/today-bought';
+@import './components/faqs';
+@import './components/banner';
+@import './components/advantages';
+@import './components/guarantees';
+@import './components/about';
+@import './components/about-adv';
+@import './components/goal';
+@import './components/delivery';
+@import './components/return';
+@import './components/payment';
+@import './components/socials';
+@import './components/reviews';
+@import './components/reviews-page';
+@import './components/send-review';
+@import './components/form-submit';
+@import './components/product';
+@import './components/similar-bouquets';
+@import './components/catalog';

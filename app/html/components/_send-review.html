@@ -1,0 +1,51 @@
+<section class="send-review">
+  <div class="container">
+    <div class="send-review__wrapper">
+      <h2 class="send-review__title">Отправьте нам свой отзыв</h2>
+      <p class="send-review__text">
+        Отправьте нам свой отзыв и мы его обязательно опубликуем
+      </p>
+
+      <form class="send-review__form form-submit">
+        <div class="form-submit__group">
+          <input class="form-submit__input" type="text" placeholder="ФИО" />
+        </div>
+        <div class="form-submit__group">
+          <input class="form-submit__input" type="email" placeholder="E-mail" />
+        </div>
+        <div class="form-submit__group">
+          <input
+            class="form-submit__input"
+            type="text"
+            placeholder="Что купили у нас?"
+          />
+        </div>
+
+        <div class="form-submit__group form-submit__group--big">
+          <label class="custom-file-upload" for="file-upload">
+            Ваше фото (не обязательно)
+          </label>
+          <input id="file-upload" type="file" />
+        </div>
+
+        <div class="form-submit__group form-submit__group--textarea">
+          <textarea
+            class="form-submit__input"
+            placeholder="Текст отзыва"
+          ></textarea>
+        </div>
+
+        <label class="checkbox">
+          <input class="checkbox__input" type="checkbox" required checked />
+          <span class="checkbox__box"></span>
+          <span class="checkbox__text">
+            Нажимая на кнопку отправить я соглашаюсь с
+            <a href="#"> политикой конфиденциальности </a>
+          </span>
+        </label>
+
+        <button class="form-submit__btn btn" type="submit">ОТПРАВИТЬ ОТЗЫВ</button>
+      </form>
+    </div>
+  </div>
+</section>

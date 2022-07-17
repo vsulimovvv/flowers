@@ -1,0 +1,153 @@
+.contacts {
+  padding-top: 30px;
+  @include adaptive-value('padding-bottom', 80, 50, 1);
+
+  &__title {
+    @include fz30();
+    @include adaptive-value('margin-bottom', 50, 30, 1);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: minmax(auto, 220px) minmax(auto, 650px) minmax(
+        auto,
+        295px
+      );
+    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 20px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 20px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__connect {
+    @include adaptive-value('margin-bottom', 40, 20, 1);
+  }
+
+  &__map {
+    height: 375px;
+
+    @include breakpointsMaxW($bp-991) {
+      grid-column: span 2;
+      grid-row: 2/3;
+      height: calc(230px + (375 - 230) * ((100vw - 360px) / (991 - 360)));
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-column: initial;
+    }
+  }
+
+  &__item {
+    padding-left: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    line-height: 1;
+    @include adaptive-value('margin-bottom', 30, 20, 1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    span {
+      font-size: 15px;
+      line-height: 30px;
+      font-weight: 400;
+      color: #363441;
+    }
+
+    &::after {
+      @include elDef();
+      width: 15px;
+      height: 15px;
+      background-color: var(--color-accent);
+      top: 5px;
+      left: 0;
+    }
+
+    &--phone {
+      &::after {
+        @include maskImage(url('../images/icons/phone-call-2.svg'), contain);
+      }
+
+      a {
+        font-size: 25px;
+        transition: 200ms ease;
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
+    }
+
+    &--clock {
+      &::after {
+        @include maskImage(url('../images/icons/clock-fill.svg'), contain);
+      }
+    }
+
+    &--location {
+      &::after {
+        @include maskImage(url('../images/icons/location.svg'), contain);
+      }
+    }
+
+    &--email {
+      &::after {
+        @include maskImage(url('../images/icons/mail.svg'), contain);
+      }
+
+      a {
+        transition: 200ms ease;
+
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
+    }
+  }
+}
+
+.company-details {
+  line-height: 1;
+  color: #303030;
+  padding: 45px 25px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  height: 100%;
+  @include adaptive-value('padding-top', 45, 25, 1);
+  @include adaptive-value('padding-bottom', 45, 25, 1);
+  @include adaptive-value('padding-left', 25, 15, 1);
+  @include adaptive-value('padding-right', 25, 15, 1);
+
+  &__title {
+    @include adaptive-value('font-size', 23, 18, 1);
+    font-weight: 400;
+    @include adaptive-value('margin-bottom', 25, 15, 1);
+  }
+
+  &__text {
+    @include adaptive-value('font-size', 16, 14, 1);
+    line-height: 1.2;
+    font-weight: 300;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

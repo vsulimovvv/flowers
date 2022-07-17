@@ -1,0 +1,35 @@
+.today-bought {
+  @include adaptive-value('padding-bottom', 80, 50, 1);
+
+  &__title {
+    @include fz35();
+    text-align: center;
+    @include adaptive-value('margin-bottom', 60, 40, 1);
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    max-width: 295px;
+
+    @include breakpointsMaxW($bp-768) {
+      max-width: 200px;
+    }
+  }
+
+  &__slider {
+    position: relative;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: 40%;
+    }
+  }
+
+  &--similar {
+    .today-bought {
+      &__title {
+        text-align: left;
+      }
+    }
+  }
+}

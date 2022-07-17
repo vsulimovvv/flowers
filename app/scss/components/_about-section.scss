@@ -1,0 +1,35 @@
+.about-section {
+  @include adaptive-value('padding-top', 90, 50, 1);
+  @include adaptive-value('padding-bottom', 90, 50, 1);
+  @include background(cover);
+
+  @include breakpointsMaxW($bp-768) {
+    background-position: left center;
+  }
+
+  &__title {
+    @include fz35();
+    @include adaptive-value('margin-bottom', 30, 20, 1);
+  }
+
+  &__offer {
+    width: 44%;
+    color: var(--color-dark);
+
+    @include breakpointsMaxW($bp-991) {
+      width: 50%;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    @include adaptive-value('font-size', 18, 15, 1);
+
+    p {
+      @include adaptive-value('margin-bottom', 30, 20, 1);
+    }
+  }
+}

@@ -1,0 +1,352 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  z-index: 10;
+
+  &.scroll-header {
+    .header {
+      &__bottom {
+        display: none;
+      }
+
+      &__top {
+        display: none;
+      }
+
+      &__catalog {
+        flex-shrink: 0;
+        width: 26px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 350ms ease-in;
+
+        &-line {
+          border-radius: 3px;
+          width: 100%;
+          height: 2px;
+          background-color: var(--color-dark);
+          position: relative;
+          transition: 150ms ease-in;
+
+          &::after,
+          &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: inherit;
+            transition: 450ms ease-in;
+            border-radius: 3px;
+          }
+
+          &::after {
+            top: -7px;
+          }
+
+          &::before {
+            bottom: -7px;
+          }
+        }
+      }
+    }
+  }
+
+  &__catalog {
+    display: none;
+    width: 100px !important;
+
+    @include breakpointsMaxW($bp-991) {
+      display: block;
+    }
+
+    &-btn {
+      flex-shrink: 0;
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 350ms ease-in;
+      width: 100%;
+      padding-right: 70px;
+      position: relative;
+
+      &-text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 19px;
+        line-height: 1;
+        font-weight: 300;
+        color: #282828;
+        right: 0;
+        z-index: -1;
+      }
+
+      &-line {
+        border-radius: 3px;
+        width: 28px;
+        height: 2px;
+        background-color: var(--color-accent);
+        position: relative;
+        transition: 150ms ease-in;
+
+        &::after,
+        &::before {
+          position: absolute;
+          content: '';
+          width: 100%;
+          height: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: inherit;
+          transition: 450ms ease-in;
+          border-radius: 3px;
+        }
+
+        &::after {
+          top: -7px;
+        }
+
+        &::before {
+          bottom: -7px;
+        }
+      }
+    }
+  }
+
+  // &__toggle {
+  //   display: none;
+
+  //   @include breakpointsMaxW($bp-991) {
+  //     flex-shrink: 0;
+  //     width: 26px;
+  //     height: 20px;
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     transition: 350ms ease-in;
+
+  //     &-line {
+  //       border-radius: 3px;
+  //       width: 100%;
+  //       height: 2px;
+  //       background-color: var(--color-dark);
+  //       position: relative;
+  //       transition: 150ms ease-in;
+
+  //       &::after,
+  //       &::before {
+  //         position: absolute;
+  //         content: '';
+  //         width: 100%;
+  //         height: 100%;
+  //         left: 50%;
+  //         transform: translateX(-50%);
+  //         background-color: inherit;
+  //         transition: 450ms ease-in;
+  //         border-radius: 3px;
+  //       }
+
+  //       &::after {
+  //         top: -7px;
+  //       }
+
+  //       &::before {
+  //         bottom: -7px;
+  //       }
+  //     }
+  //   }
+  // }
+
+  &__top {
+    border-bottom: 1px solid #ececec;
+    padding: 18px 0;
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+  }
+
+  &__middle {
+    border-bottom: 1px solid #ececec;
+    padding: 18px 0;
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+
+      @include breakpointsMaxW($bp-container) {
+        gap: 30px;
+      }
+
+      @include breakpointsMaxW($bp-991) {
+        gap: 20px;
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: var(--color-accent);
+    padding: 20px 0;
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+  }
+
+  &__schedule {
+    position: relative;
+    fill: var(--color-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+
+    &-icon {
+      width: 36px;
+      height: 36px;
+      background-color: #f1df1a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__call {
+    position: relative;
+    color: var(--color-text);
+    padding-left: 20px;
+    line-height: 1;
+    transition: 200ms ease;
+
+    &::after {
+      @include elDef();
+      width: 17px;
+      height: 17px;
+      top: 30%;
+      transform: translateY(-50%);
+      left: 0;
+      @include maskImage(url('../images/icons/phone.svg'), contain);
+      background-color: var(--color-text);
+      transition: 200ms ease;
+    }
+
+    &:hover {
+      color: var(--color-accent);
+
+      &::after {
+        background-color: var(--color-accent);
+      }
+    }
+  }
+
+  .phone-item {
+    @include adaptive-value('font-size', 26, 20, 1);
+    line-height: 1;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+
+    a {
+      transition: 200ms ease;
+    }
+
+    &:hover {
+      a {
+        color: var(--color-accent);
+      }
+    }
+
+    &__text {
+      color: #898891;
+      padding-left: 20px;
+      position: relative;
+      @include adaptive-value('font-size', 13, 11, 1);
+
+      &::after {
+        @include elDef();
+        width: 12px;
+        height: 12px;
+        top: 50%;
+        transform: translate(0, -50%);
+        left: 0;
+        @include maskImage(url('../images/icons/phone-call.svg'), contain);
+        background-color: #6c6c6f;
+        transition: 200ms ease;
+      }
+    }
+  }
+
+  &__tools {
+    margin-left: auto;
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+  }
+
+  .header-tools {
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: 200ms ease;
+      font-size: 14px;
+      line-height: 1;
+      color: #6c6c6f;
+
+      &:hover {
+        color: var(--color-accent);
+
+        .header-tools__icon {
+          background-color: var(--color-accent);
+          fill: var(--color-white);
+        }
+      }
+    }
+
+    &__icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid #e3e5e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: 200ms ease;
+    }
+  }
+}

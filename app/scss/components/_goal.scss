@@ -1,0 +1,25 @@
+.goal {
+  @include adaptive-value('padding-bottom', 60, 40, 1);
+  
+  &__title {
+    @include fz45();
+    @include adaptive-value('margin-bottom', 35, 25, 1);
+  }
+
+  &__text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    color: var(--color-dark);
+    @include adaptive-value('font-size', 18, 15, 1);
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 50px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+}

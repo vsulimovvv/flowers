@@ -1,0 +1,74 @@
+.socials {
+  &__name {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__link {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #d5d5d5;
+    transition: 250ms ease;
+    position: relative;
+
+    &::after {
+      @include elDef();
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: 250ms ease;
+    }
+
+    &:hover {
+      &::after {
+        background-color: var(--color-white);
+      }
+    }
+
+    &--vk {
+      &::after {
+        background-color: #5281b8;
+        @include maskImage(url('../images/icons/vk.svg'), contain);
+      }
+
+      &:hover {
+        background-color: #5281b8;
+      }
+    }
+
+    &--whatsapp {
+      &::after {
+        background-color: var(--color-accent);
+        @include maskImage(url('../images/icons/whatsapp-icon.svg'), contain);
+      }
+
+      &:hover {
+        background-color: var(--color-accent);
+      }
+    }
+
+    &--telegram {
+      &::after {
+        background-color: #039be5;
+        @include maskImage(url('../images/icons/telegram.svg'), contain);
+      }
+
+      &:hover {
+        background-color: #039be5;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.top-menu {
+  @include breakpointsMaxW($bp-991) {
+    display: none;
+  }
+  
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__link {
+    transition: 200ms ease;
+    color: #8f8d99;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
