@@ -4,18 +4,31 @@
     @include('./components/base/_meta.html')
     @include('./components/base/_links.html')
 
-    <title>Title</title>
+    <title>Flower and flower</title>
   </head>
 
   <body>
     @include('./components/popups/_popups.html')
 
-    <h1 class="visually-hidden">Главная</h1>
+    <h1 class="visually-hidden">Отзывы</h1>
 
     <div class="site-wrapper">
       @include('./components/_header.html')
 
-      <main class="main">
+      <div class="breadcrumbs breadcrumbs--absolute">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="#">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link breadcrumbs__link--active">Отзывы</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <main class="main mt">
         @include('./components/_reviews-page.html')
         @include('./components/_send-review.html')
       </main>
