@@ -5,9 +5,10 @@
   left: 0;
   top: 0;
   height: 100vh;
-  background-color: var(--color-white);
+  background-color: #e8e8e8;
   z-index: 12;
   width: 400px;
+  padding: 40px;
 
   @include breakpointsMaxW($bp-991) {
     width: 80%;
@@ -17,9 +18,10 @@
   opacity: 0;
   visibility: hidden;
   transition: 350ms ease-in-out;
-  overflow-x: auto;
+  overflow-y: auto;
 
-  @include adaptive-value('padding', 40, 20, 1);
+  @include adaptive-value('padding-left', 40, 20, 1);
+  @include adaptive-value('padding-right', 40, 20, 1);
 
   &.active {
     opacity: 1;
@@ -28,15 +30,134 @@
     box-shadow: 0px 36px 51px 0px;
   }
 
-  &__logo {
+  &__btn {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 15px 77px 15px 60px;
+    border-radius: 5px;
+    position: relative;
+    font-size: 17px;
+
+    &::before {
+      @include elDef();
+      width: 12px;
+      height: 12px;
+      @include maskImage(url('../images/icons/chevron.svg'), contain);
+      background-color: var(--color-white);
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px;
+    }
+
+    &:hover {
+      & + .dropmenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    &::after {
+      @include elDef();
+      width: 20px;
+      height: 15px;
+      @include maskImage(url('../images/icons/grid.svg'), contain);
+      background-color: var(--color-white);
+      top: 50%;
+      transform: translateY(-50%);
+      left: 20px;
+    }
+  }
+
+  &__catalog {
+    position: relative;
+    margin-bottom: 40px;
+
+    .dropmenu {
+      transform: translateY(-10px);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 10;
+      width: 200px;
+      position: absolute;
+      left: 0;
+      top: 60px;
+      background-color: var(--color-white);
+      box-shadow: 0px 19px 51px 0px rgba(53, 56, 62, 0.23);
+      border-radius: 10px;
+      padding: 0 21px;
+      transition: 450ms ease;
+      transition-delay: 150ms;
+
+      &:hover {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      &__item {
+        border-bottom: 1px solid #ebebeb;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      &__link {
+        display: block;
+        width: 100%;
+        color: var(--color-dark);
+        padding: 12px 0;
+        transition: 150ms ease;
+        position: relative;
+        padding-right: 20px;
+
+        &::after {
+          @include elDef();
+          width: 10px;
+          height: 10px;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%) rotate(-90deg);
+          @include maskImage(url('../images/sprite.svg#chevron'), 100%);
+          background-color: #d0d0d0;
+          transition: 150ms ease;
+        }
+
+        &:hover {
+          color: var(--color-accent);
+
+          &::after {
+            background-color: var(--color-accent);
+            transform: translateY(-50%) translateX(3px) rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 40px;
   }
 
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: flex-start;
+    column-gap: 25px;
+    margin-bottom: 65px;
+  }
+
+  &__logo {
+    width: 140px;
+    height: 60px;
+  }
+
   &__close {
-    position: absolute;
     display: block;
-    top: 22px;
-    right: 20px;
     width: 28px;
     height: 28px;
     fill: #030303;
@@ -47,16 +168,69 @@
     margin-top: auto;
   }
 
-  &__item {
-    &:not(:last-child) {
-      margin-bottom: 15px;
+  &__link {
+    font-size: 17px;
+    width: 100%;
+    display: block;
+    padding: 8px 0;
+    color: #717174;
+    transition: 200ms ease;
+
+    &:active,
+    &:hover {
+      color: var(--color-accent);
     }
   }
 
-  &__link {
-    font-size: 16px;
-    width: 100%;
-    display: block;
+  .phone-item {
+    margin-bottom: 20px;
+  }
+
+  &__schedule {
+    position: relative;
+    fill: var(--color-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+
+    &-icon {
+      width: 36px;
+      height: 36px;
+      background-color: #f1df1a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__call {
+    position: relative;
+    color: var(--color-text);
+    padding-left: 20px;
+    line-height: 1;
+    transition: 200ms ease;
+
+    &::after {
+      @include elDef();
+      width: 17px;
+      height: 17px;
+      top: 30%;
+      transform: translateY(-50%);
+      left: 0;
+      @include maskImage(url('../images/icons/phone.svg'), contain);
+      background-color: var(--color-text);
+      transition: 200ms ease;
+    }
+
+    &:hover {
+      color: var(--color-accent);
+
+      &::after {
+        background-color: var(--color-accent);
+      }
+    }
   }
 
   .mobile-menu-box {

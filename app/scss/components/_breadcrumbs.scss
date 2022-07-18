@@ -42,7 +42,7 @@
 
   &__link {
     display: block;
-    font-size: 13px;
+    @include adaptive-value('font-size', 13, 11, 1);
     position: relative;
     transition: 150ms;
     color: #63626c;

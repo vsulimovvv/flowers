@@ -523,3 +523,47 @@ input[type='file'] {
     }
   }
 }
+
+.fix-nav {
+  display: none;
+  color: var(--color-dark);
+  padding: 12px 0;
+  background-color: #f4f4f4;
+
+  @include breakpointsMaxW($bp-991) {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 5;
+  }
+
+  .header-tools__list {
+    justify-content: center;
+
+    @include breakpointsMaxW($bp-576) {
+      gap: 20px;
+    }
+
+    @include breakpointsMaxW($bp-360) {
+      gap: 15px;
+    }
+  }
+
+  .header-tools__icon {
+    @include breakpointsMaxW($bp-360) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .header-tools__btn {
+    span {
+      @include breakpointsMaxW($bp-360) {
+        font-size: 12px;
+      }
+    }
+  }
+}

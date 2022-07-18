@@ -3,7 +3,7 @@
   @include adaptive-value('padding-bottom', 60, 40, 1);
 
   &__title {
-    @include adaptive-value('font-size', 26, 20, 1);
+    @include adaptive-value('font-size', 26, 25, 1);
     color: #323131;
     margin-bottom: 8px;
     font-weight: 400;
@@ -33,11 +33,18 @@
     }
   }
 
+  .swiper {
+    @include breakpointsMaxW($bp-991) {
+      margin-left: 0;
+    }
+  }
+
   &__price {
     @include fz30();
     line-height: 1;
     font-weight: 600;
     color: #323131;
+    flex-shrink: 0;
   }
 
   .slider-thumbs {
@@ -76,17 +83,13 @@
       height: calc(100% - 100px);
 
       @include breakpointsMaxW($bp-991) {
-        max-width: 360px;
+        max-width: 500px;
         height: 100%;
-        width: 90%;
+        width: calc(100% - 60px);
       }
 
       @include breakpointsMaxW($bp-576) {
         max-width: 300px;
-      }
-
-      @include breakpointsMaxW($bp-360) {
-        max-width: 280px;
       }
 
       .swiper-slide {
@@ -169,7 +172,11 @@
       justify-content: space-between;
 
       @include breakpointsMaxW($bp-991) {
-        display: none;
+        left: initial;
+        transform: translate(0);
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
 
@@ -188,10 +195,6 @@
       &::after {
         background-color: var(--color-dark);
         @include maskImage(url('../images/icons/chevron.svg'), contain);
-      }
-
-      @include breakpointsMaxW($bp-991) {
-        display: none;
       }
     }
 
@@ -245,7 +248,11 @@
     padding-bottom: 13px;
     margin-bottom: 20px;
 
-    @include breakpointsMaxW($bp-576) {
+    @include breakpointsMaxW($bp-768) {
+      gap: 20px;
+    }
+
+    @include breakpointsMaxW($bp-360) {
       flex-direction: column;
       align-items: flex-start;
     }
@@ -254,11 +261,11 @@
   &__top-right {
     max-width: 160px;
     text-align: right;
-    font-size: 14px;
     line-height: 19px;
     color: #888888;
+    @include adaptive-value('font-size', 14, 12, 1);
 
-    @include breakpointsMaxW($bp-576) {
+    @include breakpointsMaxW($bp-360) {
       text-align: left;
       max-width: 100%;
     }
@@ -277,6 +284,10 @@
     display: flex;
     align-items: center;
     gap: 20px;
+
+    @include breakpointsMaxW($bp-576) {
+      gap: 10px;
+    }
   }
 
   &__vendor-code {
@@ -348,11 +359,11 @@
     gap: 10px;
     margin-bottom: 25px;
 
-    @include breakpointsMaxW($bp-991) {
-      justify-content: flex-start;
+    @include breakpointsMaxW($bp-576) {
+      gap: 7px;
     }
 
-    @include breakpointsMaxW($bp-576) {
+    @include breakpointsMaxW($bp-360) {
       grid-template-columns: repeat(4, 1fr);
       width: 100%;
     }
@@ -366,6 +377,13 @@
     width: 100%;
     min-width: 200px;
 
+    @include breakpointsMaxW($bp-576) {
+      font-size: 14px;
+      padding-top: 15px;
+      height: 42px;
+      min-width: 100px;
+    }
+
     &--click {
       border: 1px solid var(--color-accent);
       border-radius: 5px;
@@ -373,6 +391,12 @@
       font-size: 16px;
 
       @include breakpointsMaxW($bp-576) {
+        padding-left: 12px;
+        padding-right: 12px;
+        font-size: 14px;
+      }
+
+      @include breakpointsMaxW($bp-360) {
         grid-column: span 4;
         max-width: 100%;
         grid-row: 1/2;
@@ -387,6 +411,11 @@
       }
 
       @include breakpointsMaxW($bp-576) {
+        padding-left: 35px;
+        padding-right: 12px;
+      }
+
+      @include breakpointsMaxW($bp-360) {
         max-width: 100%;
         grid-column: span 3;
       }
@@ -404,6 +433,14 @@
         @include breakpointsMaxW($bp-container) {
           left: 30px;
         }
+
+        @include breakpointsMaxW($bp-576) {
+          left: 20px;
+        }
+
+        @include breakpointsMaxW($bp-360) {
+          left: 50px;
+        }
       }
     }
 
@@ -417,6 +454,11 @@
       flex-shrink: 0;
 
       @include breakpointsMaxW($bp-576) {
+        width: 40px;
+        height: 42px;
+      }
+
+      @include breakpointsMaxW($bp-360) {
         justify-self: end;
       }
 
@@ -430,6 +472,11 @@
         left: 50%;
         transform: translate(-50%, -50%);
         transition: 200ms ease;
+
+        @include breakpointsMaxW($bp-576) {
+          width: 15px;
+          height: 15px;
+        }
       }
 
       &:hover {

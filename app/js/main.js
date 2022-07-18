@@ -274,33 +274,13 @@ window.addEventListener('DOMContentLoaded', () => {
   toggleAccordion('.accordion__control', '.accordion__content', '.accordion');
 
   // * ===== Mixer
-  // $(document).ready(function () {
-  //   $('.bestsellers').mixItUp({
-  //     selectors: {
-  //       filter: '.bestsellers__top-btn',
-  //     },
-  //   });
-
-  //   $('.new-products').mixItUp({
-  //     selectors: {
-  //       filter: '.new-products__top-btn',
-  //     },
-  //   });
-  // });
-
   (function mixer() {
     const mixContent = document.querySelector('.new-products__mixer');
     if (mixContent) {
       const mixer = mixitup(mixContent);
     }
   })();
-
-  // (function mixer() {
-  //   const mixContent2 = document.querySelector('.new-products');
-  //   if (mixContent2) {
-  //     const mixer = mixitup(mixContent2);
-  //   }
-  // })();
+ 
   // // * ===== Modal
   // (function modals() {
   //   function bindModal(openBtn, modal, close) {
