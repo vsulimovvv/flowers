@@ -2911,6 +2911,103 @@
 
       </main>
       <footer class="footer">
+  <div class="footer-mobile">
+    <div class="container">
+      <div class="footer-mobile__top">
+        <a class="logo" href="#">
+          <img src="images/logo.png" alt="лого" />
+        </a>
+        <div class="footer__socials socials">
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a
+                class="socials__link socials__link--vk"
+                href="#"
+                aria-label="Vk"
+              ></a>
+            </li>
+            <li class="socials__item">
+              <a
+                class="socials__link socials__link--whatsapp"
+                href="#"
+                aria-label="Whatsapp"
+              ></a>
+            </li>
+            <li class="socials__item">
+              <a
+                class="socials__link socials__link--telegram"
+                href="#"
+                aria-label="Telegram"
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-mobile__body">
+      <div class="footer-contacts">
+        <p class="footer__name">Контакты</p>
+
+        <ul class="footer-contacts__list">
+          <li class="footer-contacts__item footer-contacts__item--phone">
+            <span>заказ:</span>
+            <a href="tel:+79067021115">+7 (906) 702-11-15</a>
+          </li>
+
+          <li class="footer-contacts__item footer-contacts__item--location">
+            <span>Адрес:</span>
+            <address>Москва, ул. Название улицы 10</address>
+          </li>
+          <li class="footer-contacts__item footer-contacts__item--schedule">
+            <span>Режим работы:</span>
+            <p>круглосуточно 24/7</p>
+          </li>
+          <li class="footer-contacts__item footer-contacts__item--email">
+            <span>E-mail:</span>
+            <a href="mailto:info@love-bouquet.ru">info@love-bouquet.ru</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-payment">
+        <ul class="footer-payment__list">
+          <li class="footer-payment__item">
+            <img
+              src="images/content/mir.png"
+              alt="Мир"
+              width="45"
+              height="15"
+            />
+          </li>
+          <li class="footer-payment__item">
+            <img
+              src="images/content/visa.png"
+              alt="Виза"
+              width="45"
+              height="15"
+            />
+          </li>
+          <li class="footer-payment__item">
+            <img
+              src="images/content/mastercard.png"
+              alt="Мастеркард"
+              width="30"
+              height="15"
+            />
+          </li>
+          <li class="footer-payment__item">
+            <img
+              src="images/content/ym.png"
+              alt="Яндекс деньги"
+              width="15"
+              height="15"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <div class="footer__wrapper">
       <div class="footer__left">
@@ -3026,7 +3123,7 @@
             </li>
           </ul>
         </div>
-        <div class="footer__col">
+        <div class="footer__col footer__col--contacts">
           <p class="footer__name">Контакты</p>
 
           <ul class="footer-contacts">
@@ -3137,57 +3234,57 @@
   </div>
 </footer>
 
-<div class="fix-nav header-tools">
-    <ul class="header-tools__list">
-      <li class="header-tools__item">
-        <button class="header-tools__btn" type="button">
-          <span class="header-tools__icon">
-            <svg width="15" height="15">
-              <use xlink:href="images/sprite.svg#search"></use>
-            </svg>
-          </span>
-          <span>Поиск</span>
-        </button>
-      </li>
-      <li class="header-tools__item">
-        <button class="header-tools__btn" type="button">
-          <span class="header-tools__icon">
-            <svg width="15" height="15">
-              <use xlink:href="images/sprite.svg#user"></use>
-            </svg>
-          </span>
-          <span>Войти</span>
-        </button>
-      </li>
-      <li class="header-tools__item">
-        <button class="header-tools__btn" type="button">
-          <span class="header-tools__icon">
-            <svg width="15" height="15">
-              <use xlink:href="images/sprite.svg#heart"></use>
-            </svg>
-          </span>
+<aside class="fix-nav header-tools">
+  <ul class="header-tools__list">
+    <li class="header-tools__item">
+      <button class="header-tools__btn" type="button">
+        <span class="header-tools__icon">
+          <svg width="15" height="15">
+            <use xlink:href="images/sprite.svg#search"></use>
+          </svg>
+        </span>
+        <span>Поиск</span>
+      </button>
+    </li>
+    <li class="header-tools__item">
+      <button class="header-tools__btn" type="button">
+        <span class="header-tools__icon">
+          <svg width="15" height="15">
+            <use xlink:href="images/sprite.svg#user"></use>
+          </svg>
+        </span>
+        <span>Войти</span>
+      </button>
+    </li>
+    <li class="header-tools__item">
+      <button class="header-tools__btn" type="button">
+        <span class="header-tools__icon">
+          <svg width="15" height="15">
+            <use xlink:href="images/sprite.svg#heart"></use>
+          </svg>
+        </span>
 
-          <span>Избранные</span>
-        </button>
-      </li>
-      <li class="header-tools__item">
-        <button class="header-tools__btn" type="button">
-          <span class="header-tools__icon">
-            <svg width="15" height="15">
-              <use xlink:href="images/sprite.svg#cart"></use>
-            </svg>
+        <span>Избранные</span>
+      </button>
+    </li>
+    <li class="header-tools__item">
+      <button class="header-tools__btn" type="button">
+        <span class="header-tools__icon">
+          <svg width="15" height="15">
+            <use xlink:href="images/sprite.svg#cart"></use>
+          </svg>
 
-            <small class="count">0</small>
-          </span>
-          <span>Корзина</span>
-        </button>
-      </li>
-      <li class="header-tools__item header-tools__item--price-count">
-        <span class="number">0</span><small> ₽ </small>
-      </li>
-    </ul>
+          <small class="count">0</small>
+        </span>
+        <span>Корзина</span>
+      </button>
+    </li>
+    <li class="header-tools__item header-tools__item--price-count">
+      <span class="number">0</span><small> ₽ </small>
+    </li>
+  </ul>
+</aside>
 
-</div>
     </div>
 
     <!-- Swiper JS -->

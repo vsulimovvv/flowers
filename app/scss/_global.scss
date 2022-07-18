@@ -289,6 +289,7 @@ input[type='file'] {
     font-size: 15px;
   }
 }
+
 .range-slider {
   display: flex;
   flex-direction: column;
@@ -387,13 +388,8 @@ input[type='file'] {
   opacity: 0;
   pointer-events: none;
   padding: 40px 0;
-
   transform: translateY(-10px);
   transition: all 250ms ease-in-out;
-
-  @include breakpointsMaxW($bp-991) {
-    // display: none;
-  }
 
   &__name {
     font-size: 18px;
@@ -402,7 +398,6 @@ input[type='file'] {
     color: #404040;
     padding-bottom: 20px;
     margin-bottom: 20px;
-
     border-bottom: 1px solid #ededed;
   }
 
