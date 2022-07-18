@@ -303,12 +303,22 @@ window.addEventListener('DOMContentLoaded', () => {
   toggleAccordion('.accordion__control', '.accordion__content', '.accordion');
 
   // * ===== Mixer
-  (function mixer() {
-    const mixContent = document.querySelector('.new-products__mixer');
-    if (mixContent) {
-      const mixer = mixitup(mixContent);
+  function mix(mixContainer1, mixContainer2) {
+    const containerEl1 = document.querySelector(mixContainer1);
+    const containerEl2 = document.querySelector(mixContainer2);
+  
+    const config = {
+      controls: {
+        scope: 'local'
+      }
     }
-  })();
+  
+    if (containerEl1 || containerEl2) {
+      const mixer1 = mixitup(containerEl1, config);
+      const mixer2 = mixitup(containerEl2, config);
+    }
+  }
+  mix('[data-ref="container-1"]', '[data-ref="container-2"]');
 
   // * ===== Modal
   (function modals() {
