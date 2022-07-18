@@ -9,6 +9,19 @@
     font-weight: 400;
   }
 
+  &__text {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 1;
+    color: #636363;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
   &__wrapper {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -89,7 +102,7 @@
       }
 
       @include breakpointsMaxW($bp-576) {
-        max-width: 300px;
+        max-width: calc(280px + (500 - 280) * ((100vw - 360px) / (576 - 360)));
       }
 
       .swiper-slide {

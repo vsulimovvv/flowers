@@ -89,6 +89,36 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     });
   })();
+  // * ==== Single Product
+  (function verticalSlider() {
+    let mySwiperNav = new Swiper('#slider-nav-2', {
+      slidesPerView: 'auto',
+      spaceBetween: 12,
+      direction: 'vertical',
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        320: {
+          direction: 'horizontal',
+        },
+        991: {
+          direction: 'vertical',
+        },
+      },
+    });
+
+    let mySwiper = new Swiper('#slider-main-2', {
+      spaceBetween: 10,
+      loopedSlides: 4,
+      thumbs: {
+        swiper: mySwiperNav,
+      },
+    });
+  })();
 
   function toggleActive() {
     const btns = document.querySelectorAll('.product-height__btn');
@@ -141,8 +171,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   })();
 
-   // * ==== Dropdown
-   document.addEventListener('click', (e) => {
+  // * ==== Dropdown
+  document.addEventListener('click', (e) => {
     const isDropdownButton = e.target.matches('[data-dropdown-button]');
     if (!isDropdownButton && e.target.closest('[data-dropdown]') != null)
       return;
@@ -173,10 +203,9 @@ window.addEventListener('DOMContentLoaded', () => {
   // ! Change
   const header = document.querySelector('header');
 
-    if (window.pageYOffset >= 50) {
-      header.classList.add('scroll-header');
-     
-    }
+  if (window.pageYOffset >= 50) {
+    header.classList.add('scroll-header');
+  }
 
   // * ===== Show Menu
   (function showMenu() {
@@ -280,43 +309,40 @@ window.addEventListener('DOMContentLoaded', () => {
       const mixer = mixitup(mixContent);
     }
   })();
- 
-  // // * ===== Modal
-  // (function modals() {
-  //   function bindModal(openBtn, modal, close) {
-  //     const openBtnEl = document.querySelectorAll(openBtn);
-  //     const modalEl = document.querySelector(modal);
-  //     const closeEl = document.querySelectorAll(close);
-  //     const body = document.querySelector('body');
-  //     if (modalEl) {
-  //       openBtnEl.forEach((el) => {
-  //         el.addEventListener('click', (e) => {
-  //           if (e.target) {
-  //             e.preventDefault();
-  //           }
-  //           modalEl.classList.add('active');
-  //           body.classList.add('no-scroll');
-  //         });
-  //       });
-  //       closeEl.forEach((btn) => {
-  //         btn.addEventListener('click', (e) => {
-  //           modalEl.classList.remove('active');
-  //           body.classList.remove('no-scroll');
-  //         });
-  //       });
-  //       modalEl.addEventListener('click', (e) => {
-  //         if (e.target === modalEl) {
-  //           modalEl.classList.remove('active');
-  //           body.classList.remove('no-scroll');
-  //         }
-  //       });
-  //     }
-  //   }
-  //   bindModal('.download__btn', '.popup--download', '.popup__close');
-  //   bindModal('.header__favorite', '.popup--card-object', '.popup__close');
-  //   bindModal('.get-presentation', '.popup--get-info', '.popup__close');
-  //   bindModal('.presentation__download', '.popup--get-info', '.popup__close');
-  // })();
+
+  // * ===== Modal
+  (function modals() {
+    function bindModal(openBtn, modal, close) {
+      const openBtnEl = document.querySelectorAll(openBtn);
+      const modalEl = document.querySelector(modal);
+      const closeEl = document.querySelectorAll(close);
+      const body = document.querySelector('body');
+      if (modalEl) {
+        openBtnEl.forEach((el) => {
+          el.addEventListener('click', (e) => {
+            if (e.target) {
+              e.preventDefault();
+            }
+            modalEl.classList.add('active');
+            body.classList.add('no-scroll');
+          });
+        });
+        closeEl.forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            modalEl.classList.remove('active');
+            body.classList.remove('no-scroll');
+          });
+        });
+        modalEl.addEventListener('click', (e) => {
+          if (e.target === modalEl) {
+            modalEl.classList.remove('active');
+            body.classList.remove('no-scroll');
+          }
+        });
+      }
+    }
+    bindModal('.card-view__btn', '.popup--quick-view', '.popup__close');
+  })();
 
   // * ===== Toggle Tabs
   function someTabs(headerSelector, tabSelector, contentSelector, activeClass) {
