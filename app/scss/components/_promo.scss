@@ -88,6 +88,10 @@
   }
 
   .promo-right {
+    .product-card {
+      
+    }
+
     &__list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);

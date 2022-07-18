@@ -10,10 +10,6 @@
   &__slide {
     box-sizing: border-box;
     max-width: 295px;
-
-    @include breakpointsMaxW($bp-768) {
-      max-width: 200px;
-    }
   }
 
   &__slider {

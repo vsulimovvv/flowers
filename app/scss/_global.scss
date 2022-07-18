@@ -567,3 +567,11 @@ input[type='file'] {
     }
   }
 }
+
+.swiper-slide {
+  .product-card {
+    &__top {
+      height: 350px !important;
+    }
+  }
+}

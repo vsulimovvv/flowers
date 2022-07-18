@@ -7,8 +7,12 @@
 
   &__top {
     overflow: hidden;
-    @include adaptive-value('height', 350, 200, 1);
+    height: 340px;
     position: relative;
+
+    @include breakpointsMaxW($bp-576) {
+      height: calc(200px + (340 - 200) * ((100vw - 360px) / (576 - 360)));
+    }
 
     img {
       @include img(cover);
@@ -93,8 +97,6 @@
         opacity: 0;
         visibility: hidden;
         z-index: 1;
-
-        // transition-delay: 300ms;
         transition: 200ms ease;
 
         @include breakpointsMaxW($bp-768) {

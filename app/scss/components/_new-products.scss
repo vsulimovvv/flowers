@@ -77,7 +77,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px 20px;
-    @include adaptive-value('margin-bottom', 60, 40, 1);
+    // @include adaptive-value('margin-bottom', 60, 40, 1);
 
     @include breakpointsMaxW($bp-991) {
       grid-template-columns: repeat(3, 1fr);
