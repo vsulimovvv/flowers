@@ -89,6 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     });
   })();
+
   // * ==== Single Product
   (function verticalSlider() {
     let mySwiperNav = new Swiper('#slider-nav-2', {
@@ -119,8 +120,9 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     });
   })();
-
-  function toggleActive() {
+  
+  // * ===== Переключение ативного класса для высоты букета
+  (function toggleActive() {
     const btns = document.querySelectorAll('.product-height__btn');
 
     function removeActive() {
@@ -135,8 +137,7 @@ window.addEventListener('DOMContentLoaded', () => {
         btn.classList.toggle('product-height__btn--active');
       });
     });
-  }
-  toggleActive();
+  })();
 
   // * ===== Custom select
   (function customSelect() {
@@ -306,13 +307,13 @@ window.addEventListener('DOMContentLoaded', () => {
   function mix(mixContainer1, mixContainer2) {
     const containerEl1 = document.querySelector(mixContainer1);
     const containerEl2 = document.querySelector(mixContainer2);
-  
+
     const config = {
       controls: {
-        scope: 'local'
-      }
-    }
-  
+        scope: 'local',
+      },
+    };
+
     if (containerEl1 || containerEl2) {
       const mixer1 = mixitup(containerEl1, config);
       const mixer2 = mixitup(containerEl2, config);
@@ -359,37 +360,40 @@ window.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelectorAll(headerSelector);
     const tab = document.querySelectorAll(tabSelector);
     const content = document.querySelectorAll(contentSelector);
-    if (header) {
-      hideTabContent();
-      showTabContent();
-      function hideTabContent() {
-        content.forEach((item) => {
-          item.classList.remove('active');
-        });
-        tab.forEach((item) => {
-          item.classList.remove(activeClass);
-        });
-      }
-      function showTabContent(i = 0) {
-        content[i].classList.add('active');
-        tab[i].classList.add(activeClass);
-      }
-      header.forEach((item) => {
-        if (item) {
-          item.addEventListener('click', (e) => {
-            const target = e.target;
-            if (target.classList.contains(tabSelector.replace(/\./, ''))) {
-              tab.forEach((item, i) => {
-                if (target == item || target.parentNode == item) {
-                  hideTabContent();
-                  showTabContent(i);
-                }
-              });
-            }
+
+    header.forEach((el) => {
+      if (el) {
+        hideTabContent();
+        showTabContent();
+        function hideTabContent() {
+          content.forEach((item) => {
+            item.classList.remove('active');
+          });
+          tab.forEach((item) => {
+            item.classList.remove(activeClass);
           });
         }
-      });
-    }
+        function showTabContent(i = 0) {
+          content[i].classList.add('active');
+          tab[i].classList.add(activeClass);
+        }
+        header.forEach((item) => {
+          if (item) {
+            item.addEventListener('click', (e) => {
+              const target = e.target;
+              if (target.classList.contains(tabSelector.replace(/\./, ''))) {
+                tab.forEach((item, i) => {
+                  if (target == item || target.parentNode == item) {
+                    hideTabContent();
+                    showTabContent(i);
+                  }
+                });
+              }
+            });
+          }
+        });
+      }
+    });
   }
   someTabs('.tabs', '.tabs-btn', '.tabs-content', 'tabs-btn--active');
 });
