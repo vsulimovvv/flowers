@@ -1,5 +1,5 @@
 .return {
-  padding-top: 90px;
+  padding-top: 80px;
   @include adaptive-value('padding-bottom', 80, 50, 1);
   background-color: var(--color-bg-gray);
   color: #414141;
@@ -7,7 +7,7 @@
 
   &__title {
     @include fz30();
-    @include adaptive-value('margin-bottom', 35, 25, 1);
+    @include adaptive-value('margin-bottom', 30, 20, 1);
   }
 
   &__inner {
