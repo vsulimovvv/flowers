@@ -3,7 +3,7 @@
   @include adaptive-value('padding-bottom', 80, 50, 1);
 
   &__title {
-    @include fz35();
+    @include fz30();
   }
 
   &__filter {
@@ -55,10 +55,15 @@
     }
 
     &__inner {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
       align-items: center;
       gap: 10px;
       font-size: 17px;
+
+      @include breakpointsMaxW($bp-991) {
+        grid-template-columns: repeat(3, auto);
+      }
     }
 
     &__name {
@@ -68,10 +73,15 @@
     &__list {
       display: flex;
       align-items: center;
-      gap: 10px;
 
       @include breakpointsMaxW($bp-991) {
         display: none;
+      }
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 10px;
       }
     }
 

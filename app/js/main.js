@@ -120,7 +120,7 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     });
   })();
-  
+
   // * ===== Переключение ативного класса для высоты букета
   (function toggleActive() {
     const btns = document.querySelectorAll('.product-height__btn');
@@ -242,8 +242,8 @@ window.addEventListener('DOMContentLoaded', () => {
           el: '.swiper-pagination',
           type: 'progressbar',
         },
-        centeredSlides: true,
-        initialSlide: 2,
+        // centeredSlides: true,
+        // initialSlide: 2,
         slidesPerView: 'auto',
         spaceBetween: 20,
         navigation: {
@@ -285,14 +285,46 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   })();
 
+  // // * ===== Accordion
+  // const toggleAccordion = (accordionControl, accordionContent, accordion) => {
+  //   const filters = document.querySelectorAll(accordionControl);
+  //   filters.forEach((el) => {
+  //     el.addEventListener('click', (e) => {
+  //       const target = e.target.closest(accordion);
+  //       const content = target.querySelector(accordionContent);
+  //       target.classList.toggle('active');
+  //       if (target.classList.contains('active')) {
+  //         content.style.maxHeight = content.scrollHeight + 'px';
+  //       } else {
+  //         content.style.maxHeight = null;
+  //       }
+  //     });
+  //   });
+  // };
+  // toggleAccordion('.accordion__control', '.accordion__content', '.accordion');
   // * ===== Accordion
   const toggleAccordion = (accordionControl, accordionContent, accordion) => {
     const filters = document.querySelectorAll(accordionControl);
+
+    const accordions = document.querySelectorAll(accordion);
+    // const content = document.querySelector(accordionContent);
+
+    accordions.forEach((accordion) => {
+      if (accordion.classList.contains('active')) {
+        accordion.querySelector(accordionContent).style.maxHeight =
+          accordion.querySelector(accordionContent).scrollHeight + 'px';
+      } else {
+        accordion.querySelector(accordionContent).style.maxHeight = null;
+      }
+    });
+
     filters.forEach((el) => {
       el.addEventListener('click', (e) => {
         const target = e.target.closest(accordion);
         const content = target.querySelector(accordionContent);
+
         target.classList.toggle('active');
+
         if (target.classList.contains('active')) {
           content.style.maxHeight = content.scrollHeight + 'px';
         } else {
@@ -301,6 +333,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
   };
+
   toggleAccordion('.accordion__control', '.accordion__content', '.accordion');
 
   // * ===== Mixer

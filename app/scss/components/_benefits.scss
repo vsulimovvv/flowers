@@ -1,0 +1,217 @@
+.benefits {
+  padding-top: 30px;
+  @include adaptive-value('padding-bottom', 80, 30, 1);
+
+  &__wrapper {
+    @include background(cover);
+    min-height: 365px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 60px 80px;
+
+    @include breakpointsMaxW($bp-container) {
+      padding: 40px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      padding: 40px 40px 40px 20px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      padding: 50px 10px;
+      min-height: auto;
+    }
+  }
+
+  &__list {
+    max-width: 800px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 45px;
+    position: relative;
+
+    @include breakpointsMaxW($bp-container) {
+      max-width: 750px;
+      gap: 20px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      width: calc(100% - 100px);
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      max-width: 100%;
+      width: 100%;
+      justify-content: space-between;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px 20px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      max-width: 100%;
+      width: 100%;
+      justify-content: space-between;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px 20px;
+    }
+
+    &::after {
+      @include elDef();
+      width: 300px;
+      height: 130px;
+      @include backgroundImage(url('../images/content/line-1.png'), contain);
+      top: 55%;
+      left: 50px;
+
+      @include breakpointsMaxW($bp-991) {
+        width: calc(210px + (300 - 210) * ((100vw - 768px) / (991 - 768)));
+      }
+
+      @include breakpointsMaxW($bp-768) {
+        display: none;
+      }
+    }
+
+    &::before {
+      @include elDef();
+      width: 420px;
+      height: 220px;
+      @include backgroundImage(url('../images/content/line-2.png'), contain);
+      top: 9%;
+      right: -20px;
+
+      @include breakpointsMaxW($bp-container) {
+        width: 385px;
+        top: 16%;
+      }
+
+      @include breakpointsMaxW($bp-991) {
+        width: calc(290px + (385 - 290) * ((100vw - 768px) / (991 - 768)));
+        top: 14%;
+      }
+
+      @include breakpointsMaxW($bp-768) {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #414141;
+    text-align: center;
+    position: relative;
+    padding-top: 60px;
+    justify-self: center;
+
+    @include breakpointsMaxW($bp-991) {
+      font-size: 15px;
+      padding-top: 50px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      grid-column: span 2;
+      font-size: 13px;
+    }
+
+    &:nth-child(even) {
+      margin-top: 110px;
+
+      @include breakpointsMaxW($bp-991) {
+        margin-top: 100px;
+      }
+
+      @include breakpointsMaxW($bp-768) {
+        margin-top: initial;
+      }
+    }
+
+    &::after {
+      @include elDef();
+      width: 40px;
+      height: 40px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include breakpointsMaxW($bp-991) {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    &--fresh {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/benefits/bouquet.png'),
+          contain
+        );
+      }
+    }
+
+    &--photo {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/benefits/photo.png'),
+          contain
+        );
+      }
+    }
+
+    &--card {
+      margin-right: 120px;
+
+      @include breakpointsMaxW($bp-container) {
+        margin-right: 65px;
+      }
+
+      @include breakpointsMaxW($bp-991) {
+        margin-right: 80px;
+      }
+
+      @include breakpointsMaxW($bp-768) {
+        margin-right: initial;
+      }
+
+      &::after {
+        @include backgroundImage(
+          url('../images/content/benefits/card.png'),
+          contain
+        );
+      }
+    }
+
+    &--delivery {
+      margin-right: 20px;
+
+      &::after {
+        @include backgroundImage(
+          url('../images/content/benefits/delivery.png'),
+          contain
+        );
+      }
+
+      @include breakpointsMaxW($bp-768) {
+        grid-column: span 3;
+      }
+    }
+
+    &--gift {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/benefits/gift.png'),
+          contain
+        );
+      }
+
+      @include breakpointsMaxW($bp-768) {
+        grid-column: span 3;
+      }
+    }
+  }
+}

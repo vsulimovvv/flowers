@@ -256,7 +256,7 @@ input[type='file'] {
   align-items: center;
   gap: 4px;
   padding: 4px;
-  background-color: #f6f6f6;
+  background-color: #f1f1f1;
   border-radius: 4px;
 
   &__text {
@@ -497,7 +497,7 @@ input[type='file'] {
 
     &:hover,
     &--active {
-      background-color: var(--color-accent-light);
+      background-color: var(--color-accent);
       color: var(--color-white);
       border-radius: 5px;
       font-size: 20px;
@@ -537,14 +537,6 @@ input[type='file'] {
 
   .header-tools__list {
     justify-content: center;
-
-    @include breakpointsMaxW($bp-576) {
-      gap: 20px;
-    }
-
-    @include breakpointsMaxW($bp-360) {
-      gap: 15px;
-    }
   }
 
   .header-tools__icon {

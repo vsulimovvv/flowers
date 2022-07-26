@@ -10,7 +10,12 @@
   &__list {
     display: flex;
     align-items: center;
-    gap: 10px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
   }
 
   &__link {
@@ -34,7 +39,7 @@
 
     &:hover {
       border-color: transparent;
-      
+
       &::after {
         background-color: var(--color-white);
       }

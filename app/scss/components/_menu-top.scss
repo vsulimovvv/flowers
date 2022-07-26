@@ -2,11 +2,16 @@
   @include breakpointsMaxW($bp-991) {
     display: none;
   }
-  
+
   &__list {
     display: flex;
     align-items: center;
-    gap: 30px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
   }
 
   &__link {

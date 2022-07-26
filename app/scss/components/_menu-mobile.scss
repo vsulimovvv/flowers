@@ -191,7 +191,6 @@
     fill: var(--color-dark);
     display: flex;
     align-items: center;
-    gap: 10px;
     margin-bottom: 25px;
 
     &-icon {
@@ -202,6 +201,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-right: 10px;
     }
   }
 
