@@ -142,7 +142,7 @@ body {
     overflow: hidden;
 
     &:hover {
-      background-color: var(--color-accent);
+      background-color: transparent;
       color: var(--color-white);
       border-color: var(--color-accent);
       border-style: solid;

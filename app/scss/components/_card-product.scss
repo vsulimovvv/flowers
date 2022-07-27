@@ -71,6 +71,11 @@
       transition: 200ms ease;
       transition-delay: 200ms;
 
+      &:hover {
+        border-color: var(--color-accent);
+        background-color: var(--color-accent);
+      }
+
       &::after {
         display: none;
       }
