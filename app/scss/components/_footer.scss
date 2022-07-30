@@ -151,7 +151,12 @@
     }
 
     &-links {
-      margin-top: 10px;
+      margin-left: 10px;
+
+      @include breakpointsMaxW($bp-container) {
+        margin-top: 10px;
+        margin-left: 0;
+      }
 
       @include breakpointsMaxW($bp-768) {
         display: grid;

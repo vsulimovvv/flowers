@@ -298,7 +298,10 @@ input[type='file'] {
   color: #25282f;
   font-size: 0.875em;
   margin-bottom: 5px;
-  padding: 20px 10px;
+  padding: 10px;
+  padding-bottom: 0;
+  max-width: 215px;
+  width: 100%;
 
   &__name {
     margin-bottom: 15px;
@@ -311,20 +314,11 @@ input[type='file'] {
 
   &__range {
     border-radius: 4px;
-    width: calc(100% - 20px);
+    width: 100%;
     height: 5px;
     border: none;
     background-color: #e2e9f8;
-    margin-bottom: 30px;
-  }
-
-  &__min {
-    flex-shrink: 0;
-    width: 70px;
-  }
-
-  &__max {
-    flex-shrink: 0;
+    margin-bottom: 20px;
   }
 
   &__values {
@@ -336,6 +330,7 @@ input[type='file'] {
 
   &__min,
   &__max {
+    flex-shrink: 0;
     width: 80px;
     height: 30px;
     background-color: #f3f3f3;
@@ -370,6 +365,19 @@ input[type='file'] {
 
   .noUi-connect {
     background-color: #aad9c0;
+  }
+
+  .noUi-touch-area {
+    &::after {
+      @include elDef();
+      width: 7px;
+      height: 7px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include backgroundImage(url('../images/content/lines.png'), contain);
+      z-index: 10;
+    }
   }
 }
 

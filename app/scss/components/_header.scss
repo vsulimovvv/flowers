@@ -148,7 +148,7 @@
 
   &__top {
     border-bottom: 1px solid #ececec;
-    padding: 18px 0;
+    padding: 14px 0;
 
     @include breakpointsMaxW($bp-991) {
       display: none;
@@ -327,11 +327,19 @@
     position: relative;
 
     &:not(:last-child) {
-      margin-right: 30px;
+      margin-right: 15px;
+    }
 
-      @include breakpointsMaxW($bp-576) {
-        margin-right: calc(20px + (30 - 20) * ((100vw - 320px) / (576 - 320)));
-      }
+    &:nth-child(1) {
+      margin-right: 40px;
+    }
+
+    &:nth-child(2) {
+      margin-right: 35px;
+    }
+
+    &:nth-child(3) {
+      margin-right: 30px;
     }
 
     .count {
